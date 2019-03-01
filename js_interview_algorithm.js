@@ -51,9 +51,18 @@ const primeFactors = (n) => {
 
 // console.log(primeFactors(8));
 
+
+// 3. Fibonacci
+// Question: How do get nth Fibonacci number?
+
+// Answer: I create an array and start from iterate through.
+
+// Fibonacci series is one of the most popular interview question for beginners. so, you have to learn this one.
+
 const fibonacci = (n) => {
     var fibo = [0,1];
 
+    //n = 0, 1, or 2 returns 1
     if (n <= 2) {
         return 1;
     }
@@ -65,4 +74,17 @@ const fibonacci = (n) => {
     return fibo[n];
 }
 
-console.log(fibonacci(5))
+// console.log(fibonacci(12)) // => 144
+// console.log(fibonacci(2)) // => 1
+
+//Recursively O(n^2)
+
+const recursiveFibonacci = (n) => {
+    if (n <= 1) {
+        return n;
+    } else {
+        return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
+    }
+}
+
+console.log(recursiveFibonacci(5))
