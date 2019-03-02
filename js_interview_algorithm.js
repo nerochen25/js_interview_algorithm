@@ -111,3 +111,23 @@ const greatestCommonDivisor = (a, b) => {
 }
 
 // console.log(greatestCommonDivisor(10,4));
+
+// 5. remove Duplicate
+// Question: How would you remove duplicate members from an array?
+
+// Answer: will start a while looping and keep an object/ associated array. If i find an element for the first time i will set its value as true (that will tell me element added once.). if i find a element in the exists object, i will not insert it into the return array.
+
+const removeDuplicate = (arr) => {
+    let uniqueArr = [];
+
+    arr.map(el => {
+        if (!uniqueArr.includes(el)) {
+            uniqueArr.push(el);
+        }
+    });
+
+    return uniqueArr;
+}
+
+console.log(removeDuplicate([1,2,3,5,1,2]))
+
