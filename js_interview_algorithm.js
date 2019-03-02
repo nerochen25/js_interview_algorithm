@@ -129,5 +129,5 @@ const removeDuplicate = (arr) => {
     return uniqueArr;
 }
 
-console.log(removeDuplicate([1,2,3,5,1,2]))
+console.log(removeDuplicate([1,3,3,3,1,5,6,7,8,1]))
 
