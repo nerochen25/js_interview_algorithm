@@ -180,10 +180,10 @@ swapNumb(1,2)
 const reverse = str => {
     let reversedStr = [];
 
-    if (str.length === 0) {
+    if (str.length <= 1) {
         return str;
     }
-    
+
     str.split('').forEach(char => {
         reversedStr.unshift(char);
     })
