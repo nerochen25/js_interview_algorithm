@@ -131,3 +131,23 @@ const removeDuplicate = (arr) => {
 
 console.log(removeDuplicate([1,3,3,3,1,5,6,7,8,1]))
 
+// 6. merge two sorted array
+// Question: How would you merge two sorted array?
+
+// Answer: I will keep a pointer for each array and (read the code. and be careful about this one.)
+
+const mergeSortedArray = (a,b) => {
+    let sortedArr;
+
+    a.forEach(el => {
+        b.push(el)
+    })
+    
+    sortedArr = b.sort(function(a, b){return a-b});
+
+    return sortedArr;
+
+
+}
+
+console.log(mergeSortedArray([2,5,6,9], [1,2,3,29]))
