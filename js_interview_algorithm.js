@@ -160,9 +160,12 @@ const mergeSortedArray = (a,b) => {
 const swapNumb = (a, b) => {
     console.log("before swap: a:", a, "b: ", b)
     b = b - a;
+    // a = a + (b - a) >> a = a + b - a >> a = b
     a = a + b;
+    // b = (a + b) - b >> b = a + b -b >> b = a
     b = a - b
     console.log("after swap: a:", a, "b: ", b)
 }
 
-swapNumb(1,2)
+// swapNumb(1,2)
+
