@@ -164,8 +164,11 @@ const swapNumb = (a, b) => {
     a = a + b;
     // b = (a + b) - b >> b = a + b -b >> b = a
     b = a - b
+    // a = a ^ b;
+    // b = a ^ b;
+    // a = a ^ b;
     console.log("after swap: a:", a, "b: ", b)
 }
 
-// swapNumb(1,2)
+swapNumb(1,2)
 
