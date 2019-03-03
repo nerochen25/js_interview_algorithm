@@ -172,3 +172,20 @@ const swapNumb = (a, b) => {
 
 swapNumb(1,2)
 
+// 8. string reverse
+// Question: How would you reverse a string in JavaScript?
+
+// Answer: I can loop through the string and concatenate letters to a new string
+
+const reverse = str => {
+    let reversedStr = [];
+    str.split('').forEach(char => {
+        reversedStr.unshift(char);
+    })
+
+    return reversedStr.join('');
+}
+
+// console.log(reverse('hello nero'))
+// console.log(reverse('you are a nice dude'))
+//   "edud ecin a era uoy"
