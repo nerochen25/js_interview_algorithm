@@ -179,6 +179,11 @@ swapNumb(1,2)
 
 const reverse = str => {
     let reversedStr = [];
+
+    if (str.length === 0) {
+        return str;
+    }
+    
     str.split('').forEach(char => {
         reversedStr.unshift(char);
     })
@@ -189,3 +194,5 @@ const reverse = str => {
 // console.log(reverse('hello nero'))
 // console.log(reverse('you are a nice dude'))
 //   "edud ecin a era uoy"
+
+
