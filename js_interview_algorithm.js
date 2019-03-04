@@ -253,5 +253,39 @@ const firstNonRepeatChar = str => {
     return 'Every letter in the string has been repeated for more once'
 }
 
-console.log(firstNonRepeatChar('hheello wworrldld'));
+// console.log(firstNonRepeatChar('hheello wworrldld'));
 
+
+// 12. remove duplicate char
+// Question: How will you remove duplicate characters from a sting?
+
+// You: This is very similar to first non repeating char. You will asks similar question. Is it case sensitive.
+
+// If interviewer says, this is case sensitive then life become easier you. If he says no. you can either use string.toLowercase() to make whole string lower. he might not like it. because return string will not posses the same case. So
+const removeDuplicateChar = str => {
+    let obj = {},
+        result = '',
+        objKeys;
+        
+    str = str.split(' ').join('');
+
+    for (let i = 0; i < str.length; i++) {
+        if (obj[str[i]]) {
+            obj[str[i]] += 1
+        } else {
+            obj[str[i]] = 1
+        }
+    }
+
+    objKeys = Object.keys(obj);
+    
+    objKeys.forEach(key => {
+        if (obj[key] === 1) {
+            result += key
+        }
+    })
+
+    return result;
+};
+
+// console.log(removeDuplicateChar('Learn more javascript dude'))
