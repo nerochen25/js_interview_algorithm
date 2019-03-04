@@ -170,7 +170,7 @@ const swapNumb = (a, b) => {
     console.log("after swap: a:", a, "b: ", b)
 }
 
-swapNumb(1,2)
+// swapNumb(1,2)
 
 // 8. string reverse
 // Question: How would you reverse a string in JavaScript?
@@ -195,4 +195,63 @@ const reverse = str => {
 // console.log(reverse('you are a nice dude'))
 //   "edud ecin a era uoy"
 
+
+// 10. reverse in place
+// Question: If you have a string like "I am the good boy". How can you generate "I ma eht doog yob"? Please note that the words are in place but reverse.
+
+// Answer: To do this, i have to do both string reverse and word reverse.
+
+const reverseInPlace = str => {
+    if (str.split(' ').length <= 1) return str.split(' ').reverse();
+
+    str = str.split(' ').map(word => {
+        return word.split('').reverse().join('');
+    })
+
+    return str.join(' ');
+}
+
+// console.log(reverseInPlace('I love devil may cry'));
+
+// 11. First non repeating char
+// Question: How could you find the first non repeating char in a string?
+
+// Answer: You must ask follow up questions.
+
+// Clarification: Is it case sensitive?
+
+// Interviewer: interviewer might say no.
+
+// Clarification: is it very long string or couple hundred?
+
+// Interviewer: Why does that matter
+const firstNonRepeatChar = str => {
+    let obj = {};
+
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === ' ') {
+            continue;
+        }
+
+        if (obj[str[i]] >= 0) {
+            obj[str[i]] += 1
+        } else {
+            obj[str[i]] = 1
+
+        }
+        
+    }
+
+    let objKeys = Object.keys(obj);
+
+    for (let j = 0; j < objKeys.length; j++) {
+        if (obj[objKeys[j]] === 1) {
+            return objKeys[j]
+        }
+    }
+
+    return 'Every letter in the string has been repeated for more once'
+}
+
+console.log(firstNonRepeatChar('hheello wworrldld'));
 
