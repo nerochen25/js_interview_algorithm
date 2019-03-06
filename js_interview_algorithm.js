@@ -298,4 +298,19 @@ const isPalindrome = (str) => {
     return str === str.split('').reverse().join('')
 }   
 
+// console.log(isPalindrome('toyota'));
 
+// 14. random between 5 to 7
+// Question:If you have a function that generate random number between 1 to 5 how could u generate random number 1 to 7 by using that function?
+
+// Answer: Very simple. think of some basic arithmetic and you will get it.
+
+const rand5 = () => {
+    return 1 + Math.random() * 4;
+}
+
+const rand7 = () => {
+    return 5 + rand5() / 5 * 2
+}
+
+console.log(rand7());
