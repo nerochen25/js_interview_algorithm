@@ -334,7 +334,6 @@ const missingNum = arr => {
     }
 
     return missingNumArr;
-
 }
 
 console.log(missingNum([1,4,3,6,7,14]));
