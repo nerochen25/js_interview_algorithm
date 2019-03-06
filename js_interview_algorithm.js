@@ -355,4 +355,4 @@ const sumTwo = (arr, sum) => {
     return false;
 }
 
-console.log(sumTwo([6,4,3,2,1,7], 2));
+// console.log(sumTwo([6,4,3,2,1,7], 2));
