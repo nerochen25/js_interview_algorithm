@@ -295,5 +295,7 @@ const removeDuplicateChar = str => {
 
 // Answer: if you reverse a word and it becomes same as the previous word, it is called palindrome.
 const isPalindrome = (str) => {
-    
-}
+    return str === str.split('').reverse().join('')
+}   
+
+
