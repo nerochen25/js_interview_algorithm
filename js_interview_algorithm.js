@@ -336,4 +336,23 @@ const missingNum = arr => {
     return missingNumArr;
 }
 
-console.log(missingNum([1,4,3,6,7,14]));
+// console.log(missingNum([1,4,3,6,7,14]));
+
+// 16. Sum of two
+// Question: From a unsorted array, check whether there are any two numbers that will sum up to a given number?
+
+// Answer: Simplest thing in the world. double loop
+
+const sumTwo = (arr, sum) => {
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] + arr[j] === sum) {
+                return true
+            } 
+        }
+        
+    }
+    return false;
+}
+
+console.log(sumTwo([6,4,3,2,1,7], 2));
