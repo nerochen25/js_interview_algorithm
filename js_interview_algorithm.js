@@ -356,3 +356,8 @@ const sumTwo = (arr, sum) => {
 }
 
 // console.log(sumTwo([6,4,3,2,1,7], 2));
+
+// 17. Largest Sum
+// Question: How would you find the largest sum of any two elements?
+
+// Answer: this is actually very simple and straight forward. Just find the two largest number and return sum of them
