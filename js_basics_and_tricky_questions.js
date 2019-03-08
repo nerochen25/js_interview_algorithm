@@ -79,8 +79,10 @@ function getMax(arr){
 
 // 12. log prefix
 function log() {
+    // think of it like arguments.slice()
     var args = Array.prototype.slice.call(arguments);
     args.unshift('(app)');
+    // think of it like console.log(args) with the 2nd console
     console.log.apply(console, args);
 }
 
