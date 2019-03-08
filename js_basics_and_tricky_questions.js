@@ -75,3 +75,13 @@ function getMax(arr){
     return Math.max.apply(null, arr);
     // or return Math.max(...arr) without apply
 }
+
+
+// 12. log prefix
+function log() {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift('(app)');
+    console.log.apply(console, args);
+}
+
+log('hello')
