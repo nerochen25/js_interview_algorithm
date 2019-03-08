@@ -35,3 +35,16 @@ Date.prototype.nextDay = function() {
     //this.setDate(int) returns a serial long number that represents a date
     return new Date(this.setDate(currentDate + 1));
 }
+
+// 7. Bind
+var nero = {
+    name: 'Nero',
+    yell: function(word) {
+        return this.name + " yells " + word;
+    }
+}
+
+var dante = {name: 'Dante'};
+var danteYell = nero.yell.bind(dante, "HELLO to Nero!");
+
+console.log(danteYell());
