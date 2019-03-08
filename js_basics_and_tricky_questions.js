@@ -129,4 +129,29 @@ var newObject = Object.create(object);
 newObject.luckyNum = 23;
 
 delete newObject.luckyNum; 
-console.log(newObject.getLuckyNum())
+// console.log(newObject.getLuckyNum())
+
+// 16. Pass by value or by reference
+// Question: Does JavaScript pass parameter by value or by reference?
+
+// Answer: Primitive type (string, number, etc.) are passed by value and objects are passed by reference. If you change a property of the passed object, the change will be affected. However, you assign a new object to the passed object, the changes will not be reflected.
+
+var num = 10,
+    str = 'hello',
+    obj1 = { num: 1 },
+    obj2 = { num: 2 },
+    obj3 = obj2;
+
+function change(num, str, obj1, obj2) {
+    num = 20;
+    str = 'hi';
+    obj1.num = 'new num';
+    obj2 = obj1;
+}
+
+change(num, str, obj1, obj2);
+console.log(num); //not affected
+console.log(str); //not affected
+console.log(obj1.num); //affected, obj1.num = 'new num'
+console.log(obj2);  //not affected
+console.log(obj3);  //not affected
