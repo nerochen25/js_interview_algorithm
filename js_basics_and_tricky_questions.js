@@ -51,7 +51,10 @@ var danteYell = nero.yell.bind(dante, "HELLO to Nero!");
 
 // 8. arguments and call
 // Write a simple function to tell whether 2 is passed as parameter or not?
-
+// 'arguments' is a built-in name, a collection of parameters 
+// like array but only has .length but no forEach or other Array prototypes
+// .call takes individual parameters, like call(1,2,3)
+// .apply takes an array of parameters, like apply([1,2,3])
 function isTwoPassed() {
     var args = Array.prototype.slice.call(arguments);
 
