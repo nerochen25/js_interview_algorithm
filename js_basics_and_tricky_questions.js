@@ -47,4 +47,21 @@ var nero = {
 var dante = {name: 'Dante'};
 var danteYell = nero.yell.bind(dante, "HELLO to Nero!");
 
-console.log(danteYell());
+// console.log(danteYell());
+
+// 8. arguments and call
+// Write a simple function to tell whether 2 is passed as parameter or not?
+
+function isTwoPassed() {
+    var args = Array.prototype.slice.call(arguments);
+
+    for (let i = 0; i < args.length; i++) {
+        if (args[i] === 2) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+// console.log(isTwoPassed(1,3,4,5,2));
