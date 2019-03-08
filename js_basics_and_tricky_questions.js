@@ -87,3 +87,22 @@ function log() {
 }
 
 log('hello')
+
+// 13. Scope and hoisting
+// Question: What will you see in the console for the following example?
+var a = 1; 
+function b() { 
+    a = 10; 
+    return; 
+    function a() {}  //hoist first in local, so a is created in local, value a = 10
+} 
+b(); 
+console.log(a); 
+
+// 14.Closures Inside Loops
+// Question: Look at the code below, you have a for loop if you have setTimeout inside it. If log the loop counter inside setTimeout, what will be logged?
+for(var i = 0; i < 10; i++) {
+    setTimeout(function() {
+      console.log(i);  
+    }, 10);
+}
