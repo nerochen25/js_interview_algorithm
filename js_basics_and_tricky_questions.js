@@ -28,7 +28,10 @@ function isEqual(a, b) {
 
 // 6. Extend Core Object
 // How could you write a method on instance of a date which will give you next day?
-
+// Arrow function wouldnt work since 'this' will point to global.
 Date.prototype.nextDay = function() {
-    
+    var currentDate = this.getDate();
+
+    //this.setDate(int) returns a serial long number that represents a date
+    return new Date(this.setDate(currentDate + 1));
 }
