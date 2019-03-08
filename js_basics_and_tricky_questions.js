@@ -22,6 +22,13 @@ function isEqual(a, b) {
     return true;
 }
 
-var a = {b: 3, a: 1};
-var b = {a: 1, b: 3};
-console.log(isEqual(a,b));
+// var a = {b: 3, a: 1};
+// var b = {a: 1, b: 3};
+// console.log(isEqual(a,b));
+
+// 6. Extend Core Object
+// How could you write a method on instance of a date which will give you next day?
+
+Date.prototype.nextDay = function() {
+    
+}
