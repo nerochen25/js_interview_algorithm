@@ -150,8 +150,35 @@ function change(num, str, obj1, obj2) {
 }
 
 change(num, str, obj1, obj2);
-console.log(num); //not affected
-console.log(str); //not affected
-console.log(obj1.num); //affected, obj1.num = 'new num'
-console.log(obj2);  //not affected
-console.log(obj3);  //not affected
+// console.log(num); //not affected
+// console.log(str); //not affected
+// console.log(obj1.num); //affected, obj1.num = 'new num'
+// console.log(obj2);  //not affected
+// console.log(obj3);  //not affected
+
+
+// 17. memoization
+// Question: How could you implement cache to save calculation time for a recursive fibonacci function?
+
+// Answer: You could use poor man's memoization with a global variable. If fibonacci is already calculated it is served from the global memo array otherwise it is calculated.
+
+
+// 18. Cache function execution
+// Question: How could you cache execution of any function?
+
+// Answer: You could have a method where you will pass a function and it will internally maintain a cache object where calculated value will be cached. When you will call the function with same argument, the cached value will be served.
+
+function cacheFn(fn) {
+    var cache={};
+    
+    return function(arg){
+        if (cache[arg]){
+           return cache[arg];
+        }
+        else{
+           cache[arg] = fn(arg);
+            return cache[arg];
+        }
+    }
+};
+  
