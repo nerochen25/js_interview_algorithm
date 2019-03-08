@@ -68,3 +68,10 @@ function isTwoPassed() {
 }
 
 // console.log(isTwoPassed(1,3,4,5,2));
+
+// 9. apply
+// How could you use Math.max to find the max value in array?
+function getMax(arr){
+    return Math.max.apply(null, arr);
+    // or return Math.max(...arr) without apply
+}
