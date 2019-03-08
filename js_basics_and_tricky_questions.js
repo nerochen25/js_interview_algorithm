@@ -86,7 +86,7 @@ function log() {
     console.log.apply(console, args);
 }
 
-log('hello')
+// log('hello')
 
 // 13. Scope and hoisting
 // Question: What will you see in the console for the following example?
@@ -96,13 +96,37 @@ function b() {
     return; 
     function a() {}  //hoist first in local, so a is created in local, value a = 10
 } 
-b(); 
-console.log(a); 
+// b(); 
+// console.log(a); 
 
 // 14.Closures Inside Loops
 // Question: Look at the code below, you have a for loop if you have setTimeout inside it. If log the loop counter inside setTimeout, what will be logged?
-for(var i = 0; i < 10; i++) {
-    setTimeout(function() {
-      console.log(i);  
-    }, 10);
+// for(var i = 0; i < 10; i++) {
+//     setTimeout(function() {
+//       console.log(i);  
+//     }, 10);
+// }
+// above will return 10 since the inner function will only be
+// executed after the current call stack is over, which is value i already reaches to 10;
+//SOLUTION: IIFE (Immediately Invoked Function Expression)
+// for(var i = 0; i < 10; i++) {
+//     setTimeout((function(i) {
+//       console.log(i);
+//     })(i), 10)
+// }
+
+// 15. Delete can delete but
+// Question: Look at the code below, I have a property in a object and I am creating a new object where I am setting it to a new value. If I delete that property what will i get if I try to access that property?
+var object = {
+    name: 'Nero',
+    luckyNum: 25,
+    getLuckyNum: function() {
+        return this.luckyNum;
+    }
 }
+
+var newObject = Object.create(object);
+newObject.luckyNum = 23;
+
+delete newObject.luckyNum; 
+console.log(newObject.getLuckyNum())
