@@ -200,3 +200,33 @@ addTen(5); //15
 addTen(80); //90
 addTen(-5); //5
   
+
+const company = {
+    id: "c1",
+    name: "Interana",
+    departments: {
+        id: "d1",
+        name: "Management",
+        member: {
+            id: 'm1',
+            name: 'Viknes',
+        }
+    }
+};
+
+let arr = []
+const getIds = (obj) => {
+    const keys = Object.keys(obj);
+        
+    keys.forEach(key => {
+        const value = company[key];
+        if (key === 'id') {
+            arr.push(value) //['c1']
+        } else if (typeof value === 'object') {            
+            getIds(value) //value of key 'Department' 
+        }
+    })
+}
+
+getIds(company)
+console.log(arr)
