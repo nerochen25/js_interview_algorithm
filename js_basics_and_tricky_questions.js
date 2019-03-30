@@ -215,15 +215,16 @@ const company = {
 };
 
 let arr = []
-const getIds = (obj) => {
-    const keys = Object.keys(obj);
+
+function getIds(obj) {
+    let keys = Object.keys(obj);
         
     keys.forEach(key => {
-        const value = company[key];
+        let value = obj[key];
         if (key === 'id') {
-            arr.push(value) //['c1']
-        } else if (typeof value === 'object') {            
-            getIds(value) //value of key 'Department' 
+            arr.push(value)
+        } else if (typeof value === 'object') {         
+            getIds(value)
         }
     })
 }
